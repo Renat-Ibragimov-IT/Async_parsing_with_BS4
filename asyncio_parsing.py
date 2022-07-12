@@ -48,6 +48,6 @@ def parser(data):
 
 if __name__ == '__main__':
     with open("news_sites.txt") as file:
-        links = [f'http://{website}' for website in file.read().split('\n')]
+        links = [f'http://{website}' for website in file.read().splitlines()]
     all_info = asyncio.run(main(links))
     parser(all_info)
